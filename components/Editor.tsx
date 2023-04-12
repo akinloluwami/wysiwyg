@@ -5,7 +5,7 @@ import ToolBar from "./ToolBar";
 const Editor = () => {
   const editor = useEditor({
     extensions: [StarterKit],
-    content: "<p>Hello World!</p>",
+    content: "",
     onUpdate: ({ editor }) => {
       console.log(editor.getHTML());
     },
