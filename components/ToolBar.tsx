@@ -6,6 +6,13 @@ import {
   FiAlignCenter,
   FiAlignJustify,
 } from "react-icons/fi";
+import {
+  MdFormatBold,
+  MdFormatItalic,
+  MdFormatListBulleted,
+  MdFormatListNumbered,
+  MdStrikethroughS,
+} from "react-icons/md";
 
 const ToolBar = ({ editor }: any) => {
   const handleFormatSelect = (event: any) => {
@@ -73,6 +80,21 @@ const ToolBar = ({ editor }: any) => {
         </button>
         <button>
           <FiAlignJustify />
+        </button>
+        <button onClick={() => editor.chain().focus().toggleBold().run()}>
+          <MdFormatBold />
+        </button>
+        <button>
+          <MdFormatItalic />
+        </button>
+        <button>
+          <MdStrikethroughS />
+        </button>
+        <button>
+          <MdFormatListBulleted />
+        </button>
+        <button>
+          <MdFormatListNumbered />
         </button>
       </div>
     </div>
