@@ -1,7 +1,7 @@
 import React from "react";
 
 const Editor = () => {
-  return <div>Editor</div>;
+  return <div className="mt-5">Editor</div>;
 };
 
 export default Editor;
