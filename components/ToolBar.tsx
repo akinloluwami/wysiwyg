@@ -1,3 +1,12 @@
+import { IoIosLink } from "react-icons/io";
+import { BiImage } from "react-icons/bi";
+import {
+  FiAlignLeft,
+  FiAlignRight,
+  FiAlignCenter,
+  FiAlignJustify,
+} from "react-icons/fi";
+
 const ToolBar = ({ editor }: any) => {
   const handleFormatSelect = (event: any) => {
     const format = event.target.value;
@@ -34,7 +43,7 @@ const ToolBar = ({ editor }: any) => {
   };
 
   return (
-    <div className="mb-10">
+    <div className="mb-10 flex gap-3">
       <select onChange={handleFormatSelect}>
         <option value="paragraph">Paragraph</option>
         <option value="bold">Bold</option>
@@ -46,6 +55,26 @@ const ToolBar = ({ editor }: any) => {
         <option value="bulletList">Bullet List</option>
         <option value="orderedList">Ordered List</option>
       </select>
+      <div className="flex text-xl gap-3">
+        <button>
+          <IoIosLink />
+        </button>
+        <button>
+          <BiImage />
+        </button>
+        <button>
+          <FiAlignLeft />
+        </button>
+        <button>
+          <FiAlignCenter />
+        </button>
+        <button>
+          <FiAlignRight />
+        </button>
+        <button>
+          <FiAlignJustify />
+        </button>
+      </div>
     </div>
   );
 };
