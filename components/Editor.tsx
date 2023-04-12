@@ -1,10 +1,18 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import ToolBar from "./ToolBar";
+import { Placeholder } from "@tiptap/extension-placeholder";
 
 const Editor = () => {
   const editor = useEditor({
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+      Placeholder.configure({
+        // emptyEditorClass: "is-editor-empty",
+        // emptyNodeClass: "is-empty",
+        // emptyNodeText: "Enter text here",
+      }),
+    ],
     content: "",
     onUpdate: ({ editor }) => {
       console.log(editor.getHTML());
@@ -14,7 +22,7 @@ const Editor = () => {
   return (
     <div className="mt-5">
       <ToolBar editor={editor} />
-      <EditorContent editor={editor} />
+      <EditorContent editor={editor} data-placeholder="Start typing..." />
     </div>
   );
 };

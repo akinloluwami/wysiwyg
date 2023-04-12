@@ -25,3 +25,8 @@ h2 {
 h3 {
   font-size: 1.17em;
 }
+
+.is-editor-empty .is-empty::before {
+  content: attr(data-placeholder);
+  color: #aaa;
+}
