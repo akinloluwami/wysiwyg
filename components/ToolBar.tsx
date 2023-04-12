@@ -42,7 +42,7 @@ const ToolBar = ({ editor }: any) => {
         <option value="strike">Strike</option>
         <option value="heading1">Heading 1</option>
         <option value="heading2">Heading 2</option>
-        <option value="headging3">Heading 3</option>
+        <option value="heading3">Heading 3</option>
         <option value="bulletList">Bullet List</option>
         <option value="orderedList">Ordered List</option>
       </select>
