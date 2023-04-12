@@ -3,7 +3,7 @@ import React from "react";
 
 const Index = () => {
   return (
-    <div>
+    <div className="flex  justify-center h-screen">
       <Editor />
     </div>
   );
