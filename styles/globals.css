@@ -5,3 +5,11 @@
 * {
   outline: none;
 }
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
