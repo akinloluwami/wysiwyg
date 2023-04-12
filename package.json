@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "@tiptap/extension-bubble-menu": "^2.0.2",
     "@tiptap/extension-code": "^2.0.2",
     "@tiptap/extension-floating-menu": "^2.0.2",
