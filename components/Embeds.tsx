@@ -2,6 +2,7 @@ import { Menu } from "@headlessui/react";
 import React from "react";
 import { HiOutlinePlus, HiVideoCamera } from "react-icons/hi";
 import { BsImage } from "react-icons/bs";
+import { RiBubbleChartFill } from "react-icons/ri";
 
 const Embeds = () => {
   const embedOptions = [
@@ -14,6 +15,11 @@ const Embeds = () => {
       name: "Video",
       text: "YouTube, Vimeo",
       icon: <HiVideoCamera />,
+    },
+    {
+      name: "Social",
+      text: "Facebook, Twitter",
+      icon: <RiBubbleChartFill />,
     },
   ];
   return (
