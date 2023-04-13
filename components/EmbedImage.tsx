@@ -57,11 +57,15 @@ const EmbedImage = ({ editor }: any) => {
             className="bg-green-400 py-2 px-8 rounded-sm text-white"
             onClick={() => {
               handleImageUpload();
+              close();
             }}
+            disabled={!file}
           >
             Embed
           </button>
-          <button className="py-2 px-8 rounded-sm bg-gray-200">Cancel</button>
+          <button className="py-2 px-8 rounded-sm bg-gray-200" onClick={close}>
+            Cancel
+          </button>
         </div>
       </div>
     </Modal>
