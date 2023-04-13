@@ -5,6 +5,7 @@ import { Placeholder } from "@tiptap/extension-placeholder";
 import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
 import Embeds from "./Embeds";
+import EmbedImage from "./EmbedImage";
 
 const Editor = () => {
   const editor = useEditor({
@@ -30,6 +31,7 @@ const Editor = () => {
 
   return (
     <div className="mt-5">
+      <EmbedImage />
       <ToolBar editor={editor} />
       <EditorContent editor={editor} data-placeholder="Start typing..." />
       <Embeds />

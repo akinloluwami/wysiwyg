@@ -5,7 +5,6 @@ import React, { useState } from "react";
 const Index = () => {
   return (
     <div className="flex flex-col w-[50%] mx-auto">
-      <EmbedImage />
       <input
         type="text"
         placeholder="Post title"
