@@ -24,7 +24,7 @@ const EmbedVideo = ({ editor }: any) => {
       width: 640,
       height: 480,
     });
-
+    editor.commands.focus();
     closeVideoModal();
   };
 
