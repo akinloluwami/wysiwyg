@@ -1,14 +1,14 @@
 import { create } from "zustand";
 
 interface Store {
-  isOpen: boolean;
-  open: () => void;
-  close: () => void;
+  isImageModalOpen: boolean;
+  openImageModal: () => void;
+  closeImageModal: () => void;
 }
 
 const useImageEmbedModal = create<Store>((set) => ({
-  isOpen: false,
-  open: () => set({ isOpen: true }),
-  close: () => set({ isOpen: false }),
+  isImageModalOpen: false,
+  openImageModal: () => set({ isImageModalOpen: true }),
+  closeImageModal: () => set({ isImageModalOpen: false }),
 }));
 export default useImageEmbedModal;
