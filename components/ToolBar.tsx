@@ -148,7 +148,7 @@ const ToolBar = ({ editor }: any) => {
             key={i}
             onClick={button.action}
             className={`text-lg ${
-              editor.isActive(button.name) && "text-blue-500"
+              editor?.isActive(button.name) && "text-blue-500"
             }`}
           >
             {button.icon}
