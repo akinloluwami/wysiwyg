@@ -7,6 +7,7 @@ import Link from "@tiptap/extension-link";
 import Embeds from "./Embeds";
 import EmbedImage from "./EmbedImage";
 import Image from "@tiptap/extension-image";
+import EmbedVideo from "./VideoEmbed";
 
 const Editor = () => {
   const editor = useEditor({
@@ -34,6 +35,7 @@ const Editor = () => {
   return (
     <div className="mt-5 mb-24">
       <EmbedImage editor={editor} />
+      <EmbedVideo editor={editor} />
       <ToolBar editor={editor} />
       <EditorContent
         editor={editor}
