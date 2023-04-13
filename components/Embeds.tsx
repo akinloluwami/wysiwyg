@@ -1,34 +1,46 @@
 import { Menu } from "@headlessui/react";
 import React from "react";
-import { HiOutlinePlus } from "react-icons/hi";
+import { HiOutlinePlus, HiVideoCamera } from "react-icons/hi";
+import { BsImage } from "react-icons/bs";
 
 const Embeds = () => {
+  const embedOptions = [
+    {
+      name: "Picture",
+      text: "jpg, png",
+      icon: <BsImage />,
+    },
+    {
+      name: "Video",
+      text: "YouTube, Vimeo",
+      icon: <HiVideoCamera />,
+    },
+  ];
   return (
     <Menu>
       <Menu.Button className="bg-gray-200 text-gray-600 p-2 rounded-full">
         <HiOutlinePlus />
       </Menu.Button>
-      <Menu.Items>
-        <Menu.Item>
-          {({ active }) => (
-            <a
-              className={`${active && "bg-blue-500"}`}
-              href="/account-settings"
-            >
-              Account settings
-            </a>
-          )}
-        </Menu.Item>
-        <Menu.Item>
-          {({ active }) => (
-            <a
-              className={`${active && "bg-blue-500"}`}
-              href="/account-settings"
-            >
-              Documentation
-            </a>
-          )}
-        </Menu.Item>
+      <Menu.Items className={"flex flex-col mt-4 bg-white shadow-md py-3"}>
+        {embedOptions.map((embed, i) => (
+          <Menu.Item key={i}>
+            {({ active }) => (
+              <button
+                className={`flex my-1 items-center gap-2 p-2 ${
+                  active ? "bg-gray-100" : ""
+                }`}
+              >
+                <div className="flex justify-start">
+                  <p className="text-xl mr-3">{embed.icon}</p>
+                  <div className="flex flex-col items-start">
+                    <h4>{embed.name}</h4>
+                    <small>{embed.text}</small>
+                  </div>
+                </div>
+              </button>
+            )}
+          </Menu.Item>
+        ))}
       </Menu.Items>
     </Menu>
   );
