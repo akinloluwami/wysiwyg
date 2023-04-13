@@ -3,23 +3,8 @@ import Modal from "@/components/Modal";
 import React, { useState } from "react";
 
 const Index = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  function handleOpenModal() {
-    setModalIsOpen(true);
-  }
-
-  function handleCloseModal() {
-    setModalIsOpen(false);
-  }
-
   return (
     <div className="flex flex-col w-[50%] mx-auto">
-      <button onClick={handleOpenModal}>Open Modal</button>
-
-      <Modal isOpen={modalIsOpen} onClose={handleCloseModal}>
-        <h1>Baa</h1>
-      </Modal>
       <input
         type="text"
         placeholder="Post title"
