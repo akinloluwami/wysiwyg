@@ -83,7 +83,7 @@ const ToolBar = ({ editor }: any) => {
       name: "bullet-list",
       icon: <MdFormatListBulleted />,
       action: () => {
-        // Add code for bullet-list tool action
+        editor.chain().focus().toggleBulletList().run();
       },
     },
     {
