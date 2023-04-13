@@ -48,14 +48,14 @@ const ToolBar = ({ editor }: any) => {
       name: "align-right",
       icon: <FiAlignRight />,
       action: () => {
-        // Add code for align-right tool action
+        editor.chain().focus().setTextAlign("right").run();
       },
     },
     {
       name: "align-justify",
       icon: <FiAlignJustify />,
       action: () => {
-        // Add code for align-justify tool action
+        editor.chain().focus().setTextAlign("justify").run();
       },
     },
     {
