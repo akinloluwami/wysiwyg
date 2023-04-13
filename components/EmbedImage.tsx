@@ -26,6 +26,7 @@ const EmbedImage = ({ editor }: any) => {
         editor.chain().focus().setImage({ src: image.src }).run();
       };
       reader.readAsDataURL(file);
+      setFile(null);
     }
   };
 
