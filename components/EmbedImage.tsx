@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import useImageEmbedModal from "@/stores/useImageEmbedModal";
 import { MdClose } from "react-icons/md";
 
-const EmbedImage = () => {
+const EmbedImage = ({ editor }: any) => {
   const { isOpen, close } = useImageEmbedModal();
 
   const handleCloseModal = () => {
@@ -16,6 +16,20 @@ const EmbedImage = () => {
     fileRef.current?.click();
   };
 
+  const [file, setFile] = useState(null);
+  const handleImageUpload = () => {
+    // const file = event.target.files && event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const image = new Image();
+        image.src = reader.result as string;
+        editor.chain().focus().setImage({ src: image.src }).run();
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <Modal isOpen={isOpen} onClose={handleCloseModal}>
       <div className="bg-white w-[550px] p-5">
@@ -26,7 +40,12 @@ const EmbedImage = () => {
           </button>
         </div>
         <div className="w-full h-[150px] border-dashed border-green-400 border-2 flex items-center justify-center">
-          <input type="file" ref={fileRef} className="hidden" />
+          <input
+            type="file"
+            ref={fileRef}
+            className="hidden"
+            onChange={(e: any) => setFile(e.target.files[0])}
+          />
           <button
             className="border border-green-400 p-2 bg-gray-200"
             onClick={handleImageSelect}
@@ -35,7 +54,12 @@ const EmbedImage = () => {
           </button>
         </div>
         <div className="flex gap-3 mt-5">
-          <button className="bg-green-400 py-2 px-8 rounded-sm text-white">
+          <button
+            className="bg-green-400 py-2 px-8 rounded-sm text-white"
+            onClick={() => {
+              handleImageUpload();
+            }}
+          >
             Embed
           </button>
           <button className="py-2 px-8 rounded-sm bg-gray-200">Cancel</button>
