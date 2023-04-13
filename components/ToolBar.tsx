@@ -69,14 +69,14 @@ const ToolBar = ({ editor }: any) => {
       name: "italic",
       icon: <MdFormatItalic />,
       action: () => {
-        // Add code for italic tool action
+        editor.chain().focus().toggleItalic().run();
       },
     },
     {
-      name: "strikethrough",
+      name: "strike",
       icon: <MdStrikethroughS />,
       action: () => {
-        // Add code for strikethrough tool action
+        editor.chain().focus().toggleStrike().run();
       },
     },
     {
