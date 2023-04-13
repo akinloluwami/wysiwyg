@@ -39,6 +39,7 @@ const EmbedVideo = ({ editor }: any) => {
 
   return (
     <Modal isOpen={isVideoModalOpen} onClose={closeVideoModal}>
+      <Toaster />
       <div className="bg-white w-[550px] p-5">
         <div className="flex justify-between items-center mb-4">
           <h3>Embed Video</h3>
