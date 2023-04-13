@@ -34,7 +34,7 @@ const ToolBar = ({ editor }: any) => {
     editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
   }, [editor]);
 
-  const { open } = useImageEmbedModal();
+  const { openImageModal } = useImageEmbedModal();
 
   const toolbarButtons = [
     {
@@ -52,7 +52,7 @@ const ToolBar = ({ editor }: any) => {
       name: "image",
       icon: <BiImage />,
       action: () => {
-        open();
+        openImageModal();
       },
     },
     {
