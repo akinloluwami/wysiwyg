@@ -29,9 +29,6 @@ const Embeds = () => {
             </a>
           )}
         </Menu.Item>
-        <Menu.Item disabled>
-          <span className="opacity-75">Invite a friend (coming soon!)</span>
-        </Menu.Item>
       </Menu.Items>
     </Menu>
   );
