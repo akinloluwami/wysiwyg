@@ -1,10 +1,13 @@
 import { Menu } from "@headlessui/react";
 import React from "react";
+import { HiOutlinePlus } from "react-icons/hi";
 
 const Embeds = () => {
   return (
     <Menu>
-      <Menu.Button>More</Menu.Button>
+      <Menu.Button>
+        <HiOutlinePlus />
+      </Menu.Button>
       <Menu.Items>
         <Menu.Item>
           {({ active }) => (
