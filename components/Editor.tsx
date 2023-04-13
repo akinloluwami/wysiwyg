@@ -35,7 +35,11 @@ const Editor = () => {
     <div className="mt-5">
       <EmbedImage editor={editor} />
       <ToolBar editor={editor} />
-      <EditorContent editor={editor} data-placeholder="Start typing..." />
+      <EditorContent
+        editor={editor}
+        data-placeholder="Start typing..."
+        className="my-5 py-5"
+      />
       <Embeds />
     </div>
   );
