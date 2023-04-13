@@ -10,7 +10,8 @@ const EmbedVideo = ({ editor }: any) => {
     closeVideoModal();
   };
 
-  const [platform, setPlatform] = useState("YouTube");
+  const [platform, setPlatform] = useState<string>("YouTube");
+  const [videoUrl, setVideoUrl] = useState<string>("");
 
   return (
     <Modal isOpen={isVideoModalOpen} onClose={handleCloseModal}>
@@ -26,6 +27,11 @@ const EmbedVideo = ({ editor }: any) => {
             <option value="YouTube">YouTube</option>
             <option value="Vimeo">Vimeo</option>
           </select>
+          <input
+            type="text"
+            placeholder="Enter URL"
+            onChange={(e) => setVideoUrl(e.target.value)}
+          />
         </div>
       </div>
     </Modal>
