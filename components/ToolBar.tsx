@@ -144,7 +144,13 @@ const ToolBar = ({ editor }: any) => {
       </select>
       <div className="flex gap-3">
         {toolbarButtons.map((button, i) => (
-          <button key={i} onClick={button.action}>
+          <button
+            key={i}
+            onClick={button.action}
+            className={`text-lg ${
+              editor.isActive(button.name) && "text-blue-500"
+            }`}
+          >
             {button.icon}
           </button>
         ))}
