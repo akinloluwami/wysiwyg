@@ -10,11 +10,18 @@ const EmbedVideo = ({ editor }: any) => {
   const [videoUrl, setVideoUrl] = useState<string>("");
 
   const embedYouTubeVideo = () => {
+    const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/;
+    if (!youtubeRegex.test(videoUrl)) {
+      console.error("Invalid YouTube video URL:", videoUrl);
+      return;
+    }
+
     editor.commands.setYoutubeVideo({
       src: videoUrl,
       width: 640,
       height: 480,
     });
+
     closeVideoModal();
   };
 
