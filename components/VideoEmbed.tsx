@@ -19,13 +19,17 @@ const EmbedVideo = ({ editor }: any) => {
           </button>
         </div>
         <div className="">
-          <select name="" id="" onChange={(e) => setPlatform(e.target.value)}>
+          <select
+            className="w-full border-2 border-gray-300 p-2 mt-3 mb-5"
+            onChange={(e) => setPlatform(e.target.value)}
+          >
             <option value="YouTube">YouTube</option>
             <option value="Vimeo">Vimeo</option>
           </select>
           <input
             type="text"
             placeholder="Enter URL"
+            className="w-full border-2 border-gray-300 p-2 mt-3"
             onChange={(e) => setVideoUrl(e.target.value)}
           />
           <div className="flex gap-3 mt-5">
