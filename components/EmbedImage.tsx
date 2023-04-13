@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import useImageEmbedModal from "@/stores/useImageEmbedModal";
 
 const EmbedImage = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(true);
+  const { isOpen, close } = useImageEmbedModal();
 
-  function handleOpenModal() {
-    setModalIsOpen(true);
-  }
+  const handleCloseModal = () => {
+    close();
+  };
 
-  function handleCloseModal() {
-    setModalIsOpen(false);
-  }
   return (
-    <Modal isOpen={modalIsOpen} onClose={handleCloseModal}>
-      <button onClick={handleOpenModal}>Open Modal</button>
-      <h1>Baa</h1>
+    <Modal isOpen={isOpen} onClose={handleCloseModal}>
+      <h1>Embed image</h1>
     </Modal>
   );
 };
