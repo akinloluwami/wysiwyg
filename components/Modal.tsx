@@ -6,23 +6,23 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-export default function Modal({ isOpen, onClose, children }: ModalProps) {
+const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   const [modalClasses, setModalClasses] = useState<string>(
     "opacity-0 pointer-events-none transition ease-in-out duration-500"
   );
 
-  function openModal() {
+  const openModal = () => {
     setModalClasses(
       "opacity-100 pointer-events-auto transition ease-in-out duration-500"
     );
-  }
+  };
 
-  function closeModal() {
+  const closeModal = () => {
     setModalClasses(
       "opacity-0 pointer-events-none transition ease-in-out duration-500"
     );
     onClose();
-  }
+  };
 
   return (
     <>
@@ -41,4 +41,6 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
       )}
     </>
   );
-}
+};
+
+export default Modal;
