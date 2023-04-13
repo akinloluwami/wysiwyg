@@ -8,6 +8,7 @@ import Embeds from "./Embeds";
 import EmbedImage from "./EmbedImage";
 import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
+import Youtube from "@tiptap/extension-youtube";
 
 const Editor = () => {
   const editor = useEditor({
@@ -25,6 +26,7 @@ const Editor = () => {
         openOnClick: false,
       }),
       Image,
+      Youtube,
     ],
     content: "",
     // onUpdate: ({ editor }) => {
