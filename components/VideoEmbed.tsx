@@ -10,6 +10,8 @@ const EmbedVideo = ({ editor }: any) => {
     closeVideoModal();
   };
 
+  const [platform, setPlatform] = useState("YouTube");
+
   return (
     <Modal isOpen={isVideoModalOpen} onClose={handleCloseModal}>
       <div className="bg-white w-[550px] p-5">
@@ -20,7 +22,7 @@ const EmbedVideo = ({ editor }: any) => {
           </button>
         </div>
         <div className="">
-          <select name="" id="">
+          <select name="" id="" onChange={(e) => setPlatform(e.target.value)}>
             <option value="YouTube">YouTube</option>
             <option value="Vimeo">Vimeo</option>
           </select>
