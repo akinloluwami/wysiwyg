@@ -18,91 +18,80 @@ const ToolBar = ({ editor }: any) => {
   const toolbarButtons = [
     {
       name: "link",
-      node: (
-        <button>
-          <IoIosLink />
-        </button>
-      ),
+      icon: <IoIosLink />,
+      action: () => {
+        // Add code for link tool action
+      },
     },
     {
       name: "image",
-      node: (
-        <button>
-          <BiImage />
-        </button>
-      ),
+      icon: <BiImage />,
+      action: () => {
+        // Add code for image tool action
+      },
     },
     {
       name: "align-left",
-      node: (
-        <button>
-          <FiAlignLeft />
-        </button>
-      ),
+      icon: <FiAlignLeft />,
+      action: () => {
+        // Add code for align-left tool action
+      },
     },
     {
       name: "align-center",
-      node: (
-        <button>
-          <FiAlignCenter />
-        </button>
-      ),
+      icon: <FiAlignCenter />,
+      action: () => {
+        // Add code for align-center tool action
+      },
     },
     {
       name: "align-right",
-      node: (
-        <button>
-          <FiAlignRight />
-        </button>
-      ),
+      icon: <FiAlignRight />,
+      action: () => {
+        // Add code for align-right tool action
+      },
     },
     {
       name: "align-justify",
-      node: (
-        <button>
-          <FiAlignJustify />
-        </button>
-      ),
+      icon: <FiAlignJustify />,
+      action: () => {
+        // Add code for align-justify tool action
+      },
     },
     {
       name: "bold",
-      node: (
-        <button onClick={() => editor.chain().focus().toggleBold().run()}>
-          <MdFormatBold />
-        </button>
-      ),
+      icon: <MdFormatBold />,
+      action: () => {
+        editor.chain().focus().toggleBold().run();
+      },
     },
     {
       name: "italic",
-      node: (
-        <button>
-          <MdFormatItalic />
-        </button>
-      ),
+      icon: <MdFormatItalic />,
+      action: () => {
+        // Add code for italic tool action
+      },
     },
     {
       name: "strikethrough",
-      node: (
-        <button>
-          <MdStrikethroughS />
-        </button>
-      ),
+      icon: <MdStrikethroughS />,
+      action: () => {
+        // Add code for strikethrough tool action
+      },
     },
     {
       name: "bullet-list",
-      node: (
-        <button>
-          <MdFormatListBulleted />
-        </button>
-      ),
+      icon: <MdFormatListBulleted />,
+      action: () => {
+        // Add code for bullet-list tool action
+      },
     },
     {
       name: "numbered-list",
-      node: (
-        <button>
-          <MdFormatListNumbered />
-        </button>
-      ),
+      icon: <MdFormatListNumbered />,
+      action: () => {
+        // Add code for numbered-list tool action
+      },
     },
   ];
 
@@ -155,7 +144,7 @@ const ToolBar = ({ editor }: any) => {
       </select>
       <div className="flex gap-3">
         {toolbarButtons.map((button, i) => (
-          <div key={i}>{button.node}</div>
+        
         ))}
       </div>
     </div>
