@@ -9,18 +9,12 @@ import EmbedImage from "./EmbedImage";
 import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
-// import TweetEmbed from "@/custom/twitter/TweetNode";
 import { useEffect } from "react";
 
 const Editor = () => {
   const editor = useEditor({
     extensions: [
       StarterKit,
-      Placeholder.configure({
-        // emptyEditorClass: "is-editor-empty",
-        // emptyNodeClass: "is-empty",
-        // emptyNodeText: "Enter text here",
-      }),
       TextAlign.configure({
         types: ["heading", "paragraph"],
       }),
@@ -29,7 +23,6 @@ const Editor = () => {
       }),
       Image,
       Youtube,
-      //   new TweetEmbed(),
     ],
     content: "",
     // onUpdate: ({ editor }) => {
