@@ -4,10 +4,10 @@ import useImageEmbedModal from "@/stores/useImageEmbedModal";
 import { MdClose } from "react-icons/md";
 
 const EmbedImage = ({ editor }: any) => {
-  const { isOpen, close } = useImageEmbedModal();
+  const { isImageModalOpen, closeImageModal } = useImageEmbedModal();
 
   const handleCloseModal = () => {
-    close();
+    closeImageModal();
   };
 
   const fileRef = createRef<HTMLInputElement>();
@@ -31,7 +31,7 @@ const EmbedImage = ({ editor }: any) => {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={handleCloseModal}>
+    <Modal isOpen={isImageModalOpen} onClose={handleCloseModal}>
       <div className="bg-white w-[550px] p-5">
         <div className="flex justify-between items-center mb-4">
           <h3>Upload Image</h3>
@@ -58,13 +58,16 @@ const EmbedImage = ({ editor }: any) => {
             className="bg-green-400 py-2 px-8 rounded-sm text-white"
             onClick={() => {
               handleImageUpload();
-              close();
+              closeImageModal();
             }}
             disabled={!file}
           >
             Embed
           </button>
-          <button className="py-2 px-8 rounded-sm bg-gray-200" onClick={close}>
+          <button
+            className="py-2 px-8 rounded-sm bg-gray-200"
+            onClick={closeImageModal}
+          >
             Cancel
           </button>
         </div>
