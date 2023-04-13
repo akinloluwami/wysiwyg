@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.14",
     "@tailwindcss/typography": "^0.5.9",
     "@tiptap/extension-bubble-menu": "^2.0.2",
     "@tiptap/extension-code": "^2.0.2",
