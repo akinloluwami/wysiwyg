@@ -18,7 +18,6 @@ const EmbedImage = ({ editor }: any) => {
 
   const [file, setFile] = useState(null);
   const handleImageUpload = () => {
-    // const file = event.target.files && event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
