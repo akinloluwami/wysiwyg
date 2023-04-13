@@ -13,14 +13,35 @@ import {
   MdFormatListNumbered,
   MdStrikethroughS,
 } from "react-icons/md";
+import { useCallback } from "react";
 
 const ToolBar = ({ editor }: any) => {
+  const setLink = useCallback(() => {
+    const previousUrl = editor.getAttributes("link").href;
+    const url = window.prompt("URL", previousUrl);
+
+    // cancelled
+    if (url === null) {
+      return;
+    }
+
+    // empty
+    if (url === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
+
+      return;
+    }
+
+    // update link
+    editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+  }, [editor]);
+
   const toolbarButtons = [
     {
       name: "link",
       icon: <IoIosLink />,
       action: () => {
-        // Add code for link tool action
+        setLink();
       },
     },
     {
