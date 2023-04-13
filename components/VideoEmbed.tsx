@@ -19,6 +19,12 @@ const EmbedVideo = ({ editor }: any) => {
             <MdClose />
           </button>
         </div>
+        <div className="">
+          <select name="" id="">
+            <option value="YouTube">YouTube</option>
+            <option value="Vimeo">Vimeo</option>
+          </select>
+        </div>
       </div>
     </Modal>
   );
