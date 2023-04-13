@@ -34,14 +34,14 @@ const ToolBar = ({ editor }: any) => {
       name: "align-left",
       icon: <FiAlignLeft />,
       action: () => {
-        // Add code for align-left tool action
+        editor.chain().focus().setTextAlign("left").run();
       },
     },
     {
       name: "align-center",
       icon: <FiAlignCenter />,
       action: () => {
-        // Add code for align-center tool action
+        editor.chain().focus().setTextAlign("center").run();
       },
     },
     {
