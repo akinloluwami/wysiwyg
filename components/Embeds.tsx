@@ -6,13 +6,13 @@ import { RiBubbleChartFill } from "react-icons/ri";
 import useImageEmbedModal from "@/stores/useImageEmbedModal";
 
 const Embeds = () => {
-  const { open } = useImageEmbedModal();
+  const { openImageModal } = useImageEmbedModal();
   const embedOptions = [
     {
       name: "Picture",
       text: "jpg, png",
       icon: <BsImage />,
-      action: open,
+      action: openImageModal,
     },
     {
       name: "Video",
