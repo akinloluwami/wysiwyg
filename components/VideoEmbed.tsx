@@ -10,8 +10,6 @@ const EmbedVideo = ({ editor }: any) => {
   const [videoUrl, setVideoUrl] = useState<string>("");
 
   const embedYouTubeVideo = () => {
-    console.log("YouTube");
-
     editor.commands.setYoutubeVideo({
       src: videoUrl,
       width: 640,
