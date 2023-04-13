@@ -30,3 +30,8 @@ h3 {
   content: attr(data-placeholder);
   color: #aaa;
 }
+
+a {
+  text-decoration: underline;
+  color: royalblue;
+}
