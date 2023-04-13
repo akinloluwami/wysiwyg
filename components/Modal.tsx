@@ -31,12 +31,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
           className="fixed inset-0 z-50 bg-gray-900 bg-opacity-50 flex items-center justify-center"
           onClick={closeModal}
         >
-          <div
-            className={`relative mx-auto mt-10 bg-white p-6 rounded-md shadow-xl ${modalClasses}`}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {children}
-          </div>
+          <div onClick={(e) => e.stopPropagation()}>{children}</div>
         </div>
       )}
     </>
