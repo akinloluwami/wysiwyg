@@ -26,7 +26,7 @@ const EmbedImage = () => {
           </button>
         </div>
         <div className="w-full h-[150px] border-dashed border-green-400 border-2 flex items-center justify-center">
-          <input type="file" ref={fileRef} />
+          <input type="file" ref={fileRef} className="hidden" />
           <button
             className="border border-green-400 p-2 bg-gray-200"
             onClick={handleImageSelect}
