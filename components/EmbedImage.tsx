@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 
 const EmbedImage = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(true);
 
   function handleOpenModal() {
     setModalIsOpen(true);
