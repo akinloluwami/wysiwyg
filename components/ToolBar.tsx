@@ -14,6 +14,7 @@ import {
   MdStrikethroughS,
 } from "react-icons/md";
 import { useCallback } from "react";
+import useImageEmbedModal from "@/stores/useImageEmbedModal";
 
 const ToolBar = ({ editor }: any) => {
   const setLink = useCallback(() => {
@@ -33,6 +34,8 @@ const ToolBar = ({ editor }: any) => {
     editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
   }, [editor]);
 
+  const { open } = useImageEmbedModal();
+
   const toolbarButtons = [
     {
       name: "link",
@@ -49,7 +52,7 @@ const ToolBar = ({ editor }: any) => {
       name: "image",
       icon: <BiImage />,
       action: () => {
-        // Add code for image tool action
+        open();
       },
     },
     {
