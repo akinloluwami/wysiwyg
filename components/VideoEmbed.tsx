@@ -13,7 +13,9 @@ const EmbedVideo = ({ editor }: any) => {
   const embedYouTubeVideo = () => {
     const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/;
     if (!youtubeRegex.test(videoUrl)) {
-      console.error("Invalid YouTube video URL:", videoUrl);
+      toast.error("Invalid YouTube video URL", {
+        duration: 1500,
+      });
       return;
     }
 
