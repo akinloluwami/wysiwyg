@@ -15,6 +15,97 @@ import {
 } from "react-icons/md";
 
 const ToolBar = ({ editor }: any) => {
+  const toolbarButtons = [
+    {
+      name: "link",
+      node: (
+        <button>
+          <IoIosLink />
+        </button>
+      ),
+    },
+    {
+      name: "image",
+      node: (
+        <button>
+          <BiImage />
+        </button>
+      ),
+    },
+    {
+      name: "align-left",
+      node: (
+        <button>
+          <FiAlignLeft />
+        </button>
+      ),
+    },
+    {
+      name: "align-center",
+      node: (
+        <button>
+          <FiAlignCenter />
+        </button>
+      ),
+    },
+    {
+      name: "align-right",
+      node: (
+        <button>
+          <FiAlignRight />
+        </button>
+      ),
+    },
+    {
+      name: "align-justify",
+      node: (
+        <button>
+          <FiAlignJustify />
+        </button>
+      ),
+    },
+    {
+      name: "bold",
+      node: (
+        <button onClick={() => editor.chain().focus().toggleBold().run()}>
+          <MdFormatBold />
+        </button>
+      ),
+    },
+    {
+      name: "italic",
+      node: (
+        <button>
+          <MdFormatItalic />
+        </button>
+      ),
+    },
+    {
+      name: "strikethrough",
+      node: (
+        <button>
+          <MdStrikethroughS />
+        </button>
+      ),
+    },
+    {
+      name: "bullet-list",
+      node: (
+        <button>
+          <MdFormatListBulleted />
+        </button>
+      ),
+    },
+    {
+      name: "numbered-list",
+      node: (
+        <button>
+          <MdFormatListNumbered />
+        </button>
+      ),
+    },
+  ];
+
   const handleFormatSelect = (event: any) => {
     const format = event.target.value;
     switch (format) {
@@ -62,40 +153,10 @@ const ToolBar = ({ editor }: any) => {
         <option value="bulletList">Bullet List</option>
         <option value="orderedList">Ordered List</option>
       </select>
-      <div className="flex text-xl gap-3">
-        <button>
-          <IoIosLink />
-        </button>
-        <button>
-          <BiImage />
-        </button>
-        <button>
-          <FiAlignLeft />
-        </button>
-        <button>
-          <FiAlignCenter />
-        </button>
-        <button>
-          <FiAlignRight />
-        </button>
-        <button>
-          <FiAlignJustify />
-        </button>
-        <button onClick={() => editor.chain().focus().toggleBold().run()}>
-          <MdFormatBold />
-        </button>
-        <button>
-          <MdFormatItalic />
-        </button>
-        <button>
-          <MdStrikethroughS />
-        </button>
-        <button>
-          <MdFormatListBulleted />
-        </button>
-        <button>
-          <MdFormatListNumbered />
-        </button>
+      <div className="flex gap-3">
+        {toolbarButtons.map((button, i) => (
+          <div key={i}>{button.node}</div>
+        ))}
       </div>
     </div>
   );
