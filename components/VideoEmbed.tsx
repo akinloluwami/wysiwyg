@@ -9,6 +9,19 @@ const EmbedVideo = ({ editor }: any) => {
   const [platform, setPlatform] = useState<string>("YouTube");
   const [videoUrl, setVideoUrl] = useState<string>("");
 
+  const embedYouTubeVideo = () => {
+    console.log("YouTube");
+  };
+
+  const embedVimeoVideo = () => {
+    console.log("Vimeo");
+  };
+
+  const embedVideo = () => {
+    platform === "YouTube" && embedYouTubeVideo();
+    platform === "Vimeo" && embedVimeoVideo();
+  };
+
   return (
     <Modal isOpen={isVideoModalOpen} onClose={closeVideoModal}>
       <div className="bg-white w-[550px] p-5">
