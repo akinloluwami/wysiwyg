@@ -5,7 +5,7 @@ import { HiOutlinePlus } from "react-icons/hi";
 const Embeds = () => {
   return (
     <Menu>
-      <Menu.Button>
+      <Menu.Button className="bg-gray-200 text-gray-600 p-2 rounded-full">
         <HiOutlinePlus />
       </Menu.Button>
       <Menu.Items>
