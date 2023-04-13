@@ -2,6 +2,7 @@ import React, { useState, createRef } from "react";
 import Modal from "./Modal";
 import useVideoEmbedModal from "@/stores/useVideoEmbedModal";
 import { MdClose } from "react-icons/md";
+import { toast, Toaster } from "react-hot-toast";
 
 const EmbedVideo = ({ editor }: any) => {
   const { isVideoModalOpen, closeVideoModal } = useVideoEmbedModal();
