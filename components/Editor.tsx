@@ -4,6 +4,7 @@ import ToolBar from "./ToolBar";
 import { Placeholder } from "@tiptap/extension-placeholder";
 import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
+import Embeds from "./Embeds";
 
 const Editor = () => {
   const editor = useEditor({
@@ -31,6 +32,7 @@ const Editor = () => {
     <div className="mt-5">
       <ToolBar editor={editor} />
       <EditorContent editor={editor} data-placeholder="Start typing..." />
+      <Embeds />
     </div>
   );
 };
