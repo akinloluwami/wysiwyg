@@ -6,6 +6,7 @@ import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
 import Embeds from "./Embeds";
 import EmbedImage from "./EmbedImage";
+import Image from "@tiptap/extension-image";
 
 const Editor = () => {
   const editor = useEditor({
@@ -22,6 +23,7 @@ const Editor = () => {
       Link.configure({
         openOnClick: false,
       }),
+      Image,
     ],
     content: "",
     onUpdate: ({ editor }) => {
@@ -31,7 +33,7 @@ const Editor = () => {
 
   return (
     <div className="mt-5">
-      <EmbedImage />
+      <EmbedImage editor={editor} />
       <ToolBar editor={editor} />
       <EditorContent editor={editor} data-placeholder="Start typing..." />
       <Embeds />
