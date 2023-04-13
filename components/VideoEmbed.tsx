@@ -6,19 +6,15 @@ import { MdClose } from "react-icons/md";
 const EmbedVideo = ({ editor }: any) => {
   const { isVideoModalOpen, closeVideoModal } = useVideoEmbedModal();
 
-  const handleCloseModal = () => {
-    closeVideoModal();
-  };
-
   const [platform, setPlatform] = useState<string>("YouTube");
   const [videoUrl, setVideoUrl] = useState<string>("");
 
   return (
-    <Modal isOpen={isVideoModalOpen} onClose={handleCloseModal}>
+    <Modal isOpen={isVideoModalOpen} onClose={closeVideoModal}>
       <div className="bg-white w-[550px] p-5">
         <div className="flex justify-between items-center mb-4">
           <h3>Embed Video</h3>
-          <button onClick={handleCloseModal}>
+          <button onClick={closeVideoModal}>
             <MdClose />
           </button>
         </div>
@@ -32,6 +28,24 @@ const EmbedVideo = ({ editor }: any) => {
             placeholder="Enter URL"
             onChange={(e) => setVideoUrl(e.target.value)}
           />
+          <div className="flex gap-3 mt-5">
+            <button
+              className="bg-green-400 py-2 px-8 rounded-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
+              onClick={() => {
+                //   handleImageUpload();
+                closeVideoModal();
+              }}
+              disabled={!videoUrl}
+            >
+              Embed
+            </button>
+            <button
+              className="py-2 px-8 rounded-sm bg-gray-200"
+              onClick={closeVideoModal}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
     </Modal>
