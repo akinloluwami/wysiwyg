@@ -9,6 +9,8 @@ import EmbedImage from "./EmbedImage";
 import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
+// import TweetEmbed from "@/custom/twitter/TweetNode";
+import { useEffect } from "react";
 
 const Editor = () => {
   const editor = useEditor({
@@ -27,12 +29,22 @@ const Editor = () => {
       }),
       Image,
       Youtube,
+      //   new TweetEmbed(),
     ],
     content: "",
     // onUpdate: ({ editor }) => {
     //   console.log(editor.getHTML());
     // },
   });
+
+  useEffect(() => {
+    editor?.commands.insertContent({
+      type: "tweet",
+      attrs: {
+        tweetId: "1234567890123456789",
+      },
+    });
+  }, []);
 
   return (
     <div className="mt-5 mb-24">
