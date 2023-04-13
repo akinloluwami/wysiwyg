@@ -4,9 +4,11 @@ import { HiOutlinePlus, HiVideoCamera } from "react-icons/hi";
 import { BsImage } from "react-icons/bs";
 import { RiBubbleChartFill } from "react-icons/ri";
 import useImageEmbedModal from "@/stores/useImageEmbedModal";
+import useVideoEmbedModal from "@/stores/useVideoEmbedModal";
 
 const Embeds = () => {
   const { openImageModal } = useImageEmbedModal();
+  const { openVideoModal } = useVideoEmbedModal();
   const embedOptions = [
     {
       name: "Picture",
@@ -18,6 +20,7 @@ const Embeds = () => {
       name: "Video",
       text: "YouTube, Vimeo",
       icon: <HiVideoCamera />,
+      action: openVideoModal,
     },
     {
       name: "Social",
