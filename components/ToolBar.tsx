@@ -90,7 +90,7 @@ const ToolBar = ({ editor }: any) => {
       name: "numbered-list",
       icon: <MdFormatListNumbered />,
       action: () => {
-        // Add code for numbered-list tool action
+        editor.chain().focus().toggleOrderedList().run();
       },
     },
   ];
