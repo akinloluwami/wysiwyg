@@ -1,5 +1,4 @@
 import Editor from "@/components/Editor";
-import Modal from "@/components/Modal";
 import React, { useState } from "react";
 
 const Index = () => {
