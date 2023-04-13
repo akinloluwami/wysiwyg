@@ -11,6 +11,13 @@ const EmbedVideo = ({ editor }: any) => {
 
   const embedYouTubeVideo = () => {
     console.log("YouTube");
+
+    editor.commands.setYoutubeVideo({
+      src: videoUrl,
+      width: 640,
+      height: 480,
+    });
+    closeVideoModal();
   };
 
   const embedVimeoVideo = () => {
@@ -20,7 +27,6 @@ const EmbedVideo = ({ editor }: any) => {
   const embedVideo = () => {
     platform === "YouTube" && embedYouTubeVideo();
     platform === "Vimeo" && embedVimeoVideo();
-    setVideoUrl("");
   };
 
   return (
@@ -51,6 +57,7 @@ const EmbedVideo = ({ editor }: any) => {
               className="bg-green-400 py-2 px-8 rounded-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
               onClick={() => {
                 embedVideo();
+                // closeVideoModal();
               }}
               disabled={!videoUrl}
             >
