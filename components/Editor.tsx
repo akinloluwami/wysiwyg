@@ -3,6 +3,7 @@ import StarterKit from "@tiptap/starter-kit";
 import ToolBar from "./ToolBar";
 import { Placeholder } from "@tiptap/extension-placeholder";
 import TextAlign from "@tiptap/extension-text-align";
+import Link from "@tiptap/extension-link";
 
 const Editor = () => {
   const editor = useEditor({
@@ -15,6 +16,9 @@ const Editor = () => {
       }),
       TextAlign.configure({
         types: ["heading", "paragraph"],
+      }),
+      Link.configure({
+        openOnClick: false,
       }),
     ],
     content: "",
