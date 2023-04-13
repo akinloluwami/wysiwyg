@@ -3,13 +3,16 @@ import React from "react";
 import { HiOutlinePlus, HiVideoCamera } from "react-icons/hi";
 import { BsImage } from "react-icons/bs";
 import { RiBubbleChartFill } from "react-icons/ri";
+import useImageEmbedModal from "@/stores/useImageEmbedModal";
 
 const Embeds = () => {
+  const { open } = useImageEmbedModal();
   const embedOptions = [
     {
       name: "Picture",
       text: "jpg, png",
       icon: <BsImage />,
+      action: open,
     },
     {
       name: "Video",
@@ -35,6 +38,7 @@ const Embeds = () => {
                 className={`flex my-1 items-center gap-2 p-2 ${
                   active ? "bg-gray-100" : ""
                 }`}
+                onClick={embed.action}
               >
                 <div className="flex justify-start">
                   <p className="text-xl mr-3">{embed.icon}</p>
