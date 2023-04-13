@@ -26,9 +26,9 @@ const Editor = () => {
       Image,
     ],
     content: "",
-    onUpdate: ({ editor }) => {
-      console.log(editor.getHTML());
-    },
+    // onUpdate: ({ editor }) => {
+    //   console.log(editor.getHTML());
+    // },
   });
 
   return (
