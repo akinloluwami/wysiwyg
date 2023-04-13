@@ -2,6 +2,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import ToolBar from "./ToolBar";
 import { Placeholder } from "@tiptap/extension-placeholder";
+import TextAlign from "@tiptap/extension-text-align";
 
 const Editor = () => {
   const editor = useEditor({
@@ -11,6 +12,9 @@ const Editor = () => {
         // emptyEditorClass: "is-editor-empty",
         // emptyNodeClass: "is-empty",
         // emptyNodeText: "Enter text here",
+      }),
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
       }),
     ],
     content: "",
