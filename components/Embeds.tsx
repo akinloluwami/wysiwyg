@@ -17,7 +17,7 @@ const Embeds = () => {
     },
   ];
   return (
-    <Menu>
+    <Menu as="div" className="mt-5">
       <Menu.Button className="bg-gray-200 text-gray-600 p-2 rounded-full">
         <HiOutlinePlus />
       </Menu.Button>
