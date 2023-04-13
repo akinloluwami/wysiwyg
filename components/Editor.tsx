@@ -32,7 +32,7 @@ const Editor = () => {
   });
 
   return (
-    <div className="mt-5">
+    <div className="mt-5 mb-24">
       <EmbedImage editor={editor} />
       <ToolBar editor={editor} />
       <EditorContent
