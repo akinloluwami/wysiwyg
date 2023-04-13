@@ -41,6 +41,10 @@ const ToolBar = ({ editor }: any) => {
       name: "link",
       icon: <IoIosLink />,
       action: () => {
+        if (editor.isActive("link")) {
+          editor.chain().focus().unsetLink().run();
+          return;
+        }
         setLink();
       },
     },
