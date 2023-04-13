@@ -55,7 +55,7 @@ const EmbedImage = ({ editor }: any) => {
         </div>
         <div className="flex gap-3 mt-5">
           <button
-            className="bg-green-400 py-2 px-8 rounded-sm text-white"
+            className="bg-green-400 py-2 px-8 rounded-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={() => {
               handleImageUpload();
               closeImageModal();
