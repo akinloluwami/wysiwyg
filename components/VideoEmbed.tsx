@@ -9,6 +9,7 @@ const EmbedVideo = ({ editor }: any) => {
 
   const [platform, setPlatform] = useState<string>("YouTube");
   const [videoUrl, setVideoUrl] = useState<string>("");
+  const [vimeoCode, setVimeoCode] = useState<string>("");
 
   const embedYouTubeVideo = () => {
     const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/;
