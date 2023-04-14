@@ -28,7 +28,6 @@ const EmbedVideo = ({ editor }: any) => {
     editor.commands.focus();
     closeVideoModal();
     setVideoUrl("");
-    setPlatform("YouTube");
   };
 
   const embedVimeoVideo = () => {
