@@ -30,7 +30,7 @@ const EmbedVideo = ({ editor }: any) => {
   };
 
   const embedVimeoVideo = () => {
-    console.log("Vimeo");
+    editor?.chain()?.focus()?.insertContent(vimeoCode).run();
   };
 
   const embedVideo = () => {
