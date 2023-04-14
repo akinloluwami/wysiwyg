@@ -10,7 +10,7 @@ import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
 import { useEffect } from "react";
-import TweetNode from "@/custom/twitter/TweetNode";
+import TweetNode from "@/custom/tweet/TweetNode";
 
 const Editor = () => {
   const editor = useEditor({
@@ -43,7 +43,7 @@ const Editor = () => {
 
   const insertTweet = () => {
     const tweetId = "1609348650395648000";
-    editor?.commands.insertContent(
+    editor?.commands?.insertContent(
       `<div data-type="tweetNode" data-tweet-id="${tweetId}"></div>`
     );
   };
