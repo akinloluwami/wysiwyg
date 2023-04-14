@@ -10,7 +10,7 @@ import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
 import { useEffect } from "react";
-import TweetNode from "@/custom/tweet/TweetNode";
+import iframe from "@/custom/iframe";
 
 const Editor = () => {
   const editor = useEditor({
@@ -24,39 +24,28 @@ const Editor = () => {
       }),
       Image,
       Youtube,
-      TweetNode,
+      iframe,
     ],
-    content: "",
+    content: `
+    <p>Hello</p>
+    <iframe
+    src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2FNzakiCodes%2Fposts%2Fpfbid02ooSZW1NSG3piq6XkbF9pQVaP4yCs3iNku6XpyP2vNHyXUx5nwyzUckYjEDGusJTTl&show_text=true&width=500"
+    width="500"
+    height="690"
+    style="border:none;overflow:hidden"
+    scrolling="no"
+    frameBorder="0"
+    allowfullcreen={true}
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+  ></iframe>
+    `,
     // onUpdate: ({ editor }) => {
     //   console.log(editor.getHTML());
     // },
   });
 
-  // useEffect(() => {
-  //   editor?.commands.insertContent({
-  //     type: "tweet",
-  //     attrs: {
-  //       tweetId: "1609348650395648000",
-  //     },
-  //   });
-  // }, []);
-
-  const insertTweet = () => {
-    const tweetId = "1609348650395648000";
-    editor?.commands?.insertContent(
-      `<div data-type="tweetNode" data-tweet-id="${tweetId}"></div>`
-    );
-  };
-
   return (
     <div className="mt-5 mb-24">
-      <button
-        onClick={() => {
-          insertTweet();
-        }}
-      >
-        Click
-      </button>
       <EmbedImage editor={editor} />
       <EmbedVideo editor={editor} />
       <ToolBar editor={editor} />
