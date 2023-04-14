@@ -10,6 +10,8 @@ import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
 import { useEffect } from "react";
+import { Button } from "@/custom/ButtonEmbed";
+import { Div } from "@/custom/Div";
 
 const Editor = () => {
   const editor = useEditor({
@@ -23,6 +25,8 @@ const Editor = () => {
       }),
       Image,
       Youtube,
+      Button,
+      Div,
     ],
     content: "",
     // onUpdate: ({ editor }) => {
@@ -41,6 +45,16 @@ const Editor = () => {
 
   return (
     <div className="mt-5 mb-24">
+      <button
+        onClick={() => {
+          editor?.commands.insertContent({
+            type: "div",
+            content: [{ type: "text", text: "Hello, world!" }],
+          });
+        }}
+      >
+        Click
+      </button>
       <EmbedImage editor={editor} />
       <EmbedVideo editor={editor} />
       <ToolBar editor={editor} />
