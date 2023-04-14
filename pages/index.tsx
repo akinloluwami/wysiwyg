@@ -6,8 +6,7 @@ import { TwitterTweetEmbed } from "react-twitter-embed";
 const Index = () => {
   return (
     <div className="flex flex-col w-[50%] mx-auto">
-      <TwitterTweetEmbed tweetId="1609348650395648000" />
-
+      {/* <TwitterTweetEmbed tweetId="1609348650395648000" /> */}
       <input
         type="text"
         placeholder="Post title"
