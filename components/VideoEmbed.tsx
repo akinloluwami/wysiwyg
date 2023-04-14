@@ -28,12 +28,23 @@ const EmbedVideo = ({ editor }: any) => {
     editor.commands.focus();
     closeVideoModal();
     setVideoUrl("");
+    setPlatform("YouTube");
   };
 
   const embedVimeoVideo = () => {
+    const vimeoRegex =
+      /<iframe.*src="https:\/\/player\.vimeo\.com\/video\/\d+.*".*<\/iframe>/;
+
+    if (!vimeoRegex.test(vimeoCode)) {
+      toast.error("Invalid Vimeo iframe code", {
+        duration: 1500,
+      });
+      return;
+    }
     editor?.chain()?.focus()?.insertContent(vimeoCode).run();
     closeVideoModal();
     setVimeoCode("");
+    setPlatform("YouTube");
   };
 
   const embedVideo = () => {
