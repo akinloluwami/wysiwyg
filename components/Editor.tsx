@@ -9,7 +9,6 @@ import EmbedImage from "./EmbedImage";
 import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
-import { useEffect } from "react";
 import iframe from "@/custom/iframe";
 
 const Editor = () => {
