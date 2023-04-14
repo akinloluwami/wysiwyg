@@ -69,7 +69,8 @@ const EmbedVideo = ({ editor }: any) => {
             <textarea
               autoFocus={true}
               placeholder="Paste Vimeo iframe code"
-              className="w-full "
+              className="w-full"
+              onChange={(e) => setVimeoCode(e.target.value)}
             ></textarea>
           )}
           <div className="flex gap-3 mt-5">
