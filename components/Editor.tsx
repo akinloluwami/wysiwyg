@@ -9,7 +9,7 @@ import EmbedImage from "./EmbedImage";
 import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import iframe from "@/custom/iframe";
 
 const Editor = () => {
@@ -35,7 +35,6 @@ const Editor = () => {
     //   console.log(editor.getHTML());
     // },
   });
-  const iframeButton = useRef(null);
 
   const onInsertIframe = () => {
     if (editor) {
@@ -50,11 +49,7 @@ const Editor = () => {
 
   return (
     <div className="mt-5 mb-24">
-      <button
-        ref={iframeButton}
-        onClick={onInsertIframe}
-        className="your-button-class"
-      >
+      <button onClick={onInsertIframe} className="your-button-class">
         Add iframe
       </button>
       <EmbedImage editor={editor} />
