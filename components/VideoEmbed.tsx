@@ -27,10 +27,13 @@ const EmbedVideo = ({ editor }: any) => {
     });
     editor.commands.focus();
     closeVideoModal();
+    setVideoUrl("");
   };
 
   const embedVimeoVideo = () => {
     editor?.chain()?.focus()?.insertContent(vimeoCode).run();
+    closeVideoModal();
+    setVimeoCode("");
   };
 
   const embedVideo = () => {
@@ -63,6 +66,7 @@ const EmbedVideo = ({ editor }: any) => {
               className="w-full border-2 border-gray-300 p-2 mt-3"
               onChange={(e) => setVideoUrl(e.target.value)}
               autoFocus={true}
+              value={videoUrl.trim()}
             />
           )}
           {platform === "Vimeo" && (
@@ -71,6 +75,7 @@ const EmbedVideo = ({ editor }: any) => {
               placeholder="Paste Vimeo iframe code"
               className="w-full"
               onChange={(e) => setVimeoCode(e.target.value)}
+              value={vimeoCode}
             ></textarea>
           )}
           <div className="flex gap-3 mt-5">
@@ -80,7 +85,10 @@ const EmbedVideo = ({ editor }: any) => {
                 embedVideo();
                 // closeVideoModal();
               }}
-              disabled={!videoUrl}
+              disabled={
+                (platform === "YouTube" && !videoUrl) ||
+                (platform === "Vimeo" && !vimeoCode)
+              }
             >
               Embed
             </button>
