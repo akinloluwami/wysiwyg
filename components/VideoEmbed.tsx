@@ -55,12 +55,22 @@ const EmbedVideo = ({ editor }: any) => {
             <option value="YouTube">YouTube</option>
             <option value="Vimeo">Vimeo</option>
           </select>
-          <input
-            type="text"
-            placeholder="Enter URL"
-            className="w-full border-2 border-gray-300 p-2 mt-3"
-            onChange={(e) => setVideoUrl(e.target.value)}
-          />
+          {platform === "YouTube" && (
+            <input
+              type="text"
+              placeholder="Enter URL"
+              className="w-full border-2 border-gray-300 p-2 mt-3"
+              onChange={(e) => setVideoUrl(e.target.value)}
+              autoFocus={true}
+            />
+          )}
+          {platform === "Vimeo" && (
+            <textarea
+              autoFocus={true}
+              placeholder="Paste Vimeo iframe code"
+              className="w-full "
+            ></textarea>
+          )}
           <div className="flex gap-3 mt-5">
             <button
               className="bg-green-400 py-2 px-8 rounded-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
