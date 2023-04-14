@@ -27,7 +27,7 @@ const Editor = () => {
       iframe,
     ],
     content: `
-    <p>Hello</p>
+    
 
     `,
 
@@ -36,22 +36,8 @@ const Editor = () => {
     // },
   });
 
-  const onInsertIframe = () => {
-    if (editor) {
-      editor.chain().focus().insertContent(iframeContent).run();
-    }
-  };
-
-  const iframeContent = `
-  <iframe src="https://player.vimeo.com/video/806024932?h=291ee36184&title=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/806024932">GAUCHO (el buen amigo)</a> from <a href="https://vimeo.com/tompeyrat">Tom Peyrat</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-    `;
-
   return (
     <div className="mt-5 mb-24">
-      <button onClick={onInsertIframe} className="your-button-class">
-        Add iframe
-      </button>
       <EmbedImage editor={editor} />
       <EmbedVideo editor={editor} />
       <ToolBar editor={editor} />
