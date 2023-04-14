@@ -1,4 +1,4 @@
-import React, { useState, createRef } from "react";
+import React, { useState, createRef, useEffect } from "react";
 import Modal from "./Modal";
 import useVideoEmbedModal from "@/stores/useVideoEmbedModal";
 import { MdClose } from "react-icons/md";
@@ -57,7 +57,7 @@ const EmbedVideo = ({ editor }: any) => {
   };
 
   return (
-    <Modal isOpen={isVideoModalOpen} onClose={closeVideoModal}>
+    <Modal isOpen={isVideoModalOpen}>
       <Toaster />
       <div className="bg-white w-[550px] p-5">
         <div className="flex justify-between items-center mb-4">
