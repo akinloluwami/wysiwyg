@@ -10,8 +10,7 @@ import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
 import { useEffect } from "react";
-import { Button } from "@/custom/ButtonEmbed";
-import { Div } from "@/custom/Div";
+import TweetNode from "@/custom/twitter/TweetNode";
 
 const Editor = () => {
   const editor = useEditor({
@@ -25,8 +24,7 @@ const Editor = () => {
       }),
       Image,
       Youtube,
-      Button,
-      Div,
+      TweetNode,
     ],
     content: "",
     // onUpdate: ({ editor }) => {
@@ -38,19 +36,25 @@ const Editor = () => {
     editor?.commands.insertContent({
       type: "tweet",
       attrs: {
-        tweetId: "1234567890123456789",
+        tweetId: "1609348650395648000",
       },
     });
   }, []);
 
+  const insertTweet = () => {
+    console.log("====================================");
+    // console.log();
+    console.log("====================================");
+    const tweetId = "1609348650395648000";
+    editor?.commands.insertContent(
+      `<div data-type="tweetNode" data-tweet-id="${tweetId}"></div>`
+    );
+  };
   return (
     <div className="mt-5 mb-24">
       <button
         onClick={() => {
-          editor?.commands.insertContent({
-            type: "div",
-            content: [{ type: "text", text: "Hello, world!" }],
-          });
+          insertTweet();
         }}
       >
         Click
