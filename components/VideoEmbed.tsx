@@ -51,6 +51,10 @@ const EmbedVideo = ({ editor }: any) => {
     platform === "YouTube" && embedYouTubeVideo();
     platform === "Vimeo" && embedVimeoVideo();
   };
+  const handleClose = () => {
+    closeVideoModal();
+    setPlatform("YouTube");
+  };
 
   return (
     <Modal isOpen={isVideoModalOpen} onClose={closeVideoModal}>
@@ -58,7 +62,7 @@ const EmbedVideo = ({ editor }: any) => {
       <div className="bg-white w-[550px] p-5">
         <div className="flex justify-between items-center mb-4">
           <h3>Embed Video</h3>
-          <button onClick={closeVideoModal}>
+          <button onClick={handleClose}>
             <MdClose />
           </button>
         </div>
@@ -105,7 +109,7 @@ const EmbedVideo = ({ editor }: any) => {
             </button>
             <button
               className="py-2 px-8 rounded-sm bg-gray-200"
-              onClick={closeVideoModal}
+              onClick={handleClose}
             >
               Cancel
             </button>
