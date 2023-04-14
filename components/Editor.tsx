@@ -32,24 +32,22 @@ const Editor = () => {
     // },
   });
 
-  useEffect(() => {
-    editor?.commands.insertContent({
-      type: "tweet",
-      attrs: {
-        tweetId: "1609348650395648000",
-      },
-    });
-  }, []);
+  // useEffect(() => {
+  //   editor?.commands.insertContent({
+  //     type: "tweet",
+  //     attrs: {
+  //       tweetId: "1609348650395648000",
+  //     },
+  //   });
+  // }, []);
 
   const insertTweet = () => {
-    console.log("====================================");
-    // console.log();
-    console.log("====================================");
     const tweetId = "1609348650395648000";
     editor?.commands.insertContent(
       `<div data-type="tweetNode" data-tweet-id="${tweetId}"></div>`
     );
   };
+
   return (
     <div className="mt-5 mb-24">
       <button
