@@ -1,7 +1,6 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import ToolBar from "./ToolBar";
-import { Placeholder } from "@tiptap/extension-placeholder";
 import TextAlign from "@tiptap/extension-text-align";
 import Link from "@tiptap/extension-link";
 import Embeds from "./Embeds";
@@ -9,7 +8,6 @@ import EmbedImage from "./EmbedImage";
 import Image from "@tiptap/extension-image";
 import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
-import { useEffect } from "react";
 import iframe from "@/custom/iframe";
 import Blockquote from "@tiptap/extension-blockquote";
 
