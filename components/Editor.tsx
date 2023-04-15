@@ -10,6 +10,7 @@ import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
 import iframe from "@/custom/iframe";
 import Blockquote from "@tiptap/extension-blockquote";
+import EmbedSocial from "./SocialEmbed";
 
 const Editor = () => {
   const editor = useEditor({
@@ -39,6 +40,7 @@ const Editor = () => {
     <div className="mt-5 mb-24">
       <EmbedImage editor={editor} />
       <EmbedVideo editor={editor} />
+      <EmbedSocial editor={editor} />
       <ToolBar editor={editor} />
       <EditorContent
         editor={editor}
