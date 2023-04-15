@@ -5,7 +5,7 @@ import { BsImage } from "react-icons/bs";
 import { RiBubbleChartFill } from "react-icons/ri";
 import useImageEmbedModal from "@/stores/useImageEmbedModal";
 import useVideoEmbedModal from "@/stores/useVideoEmbedModal";
-import useSocialEmbedModal from "@/stores/useSocialEmbedModal copy";
+import useSocialEmbedModal from "@/stores/useSocialEmbedModal";
 
 const Embeds = () => {
   const { openImageModal } = useImageEmbedModal();
