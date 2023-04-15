@@ -5,6 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <title>What You See Is What You Get</title>
           <script
             async
             src="https://platform.twitter.com/widgets.js"
