@@ -7,8 +7,8 @@ class MyDocument extends Document {
         <Head>
           <script
             async
-            defer
-            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"
+            src="https://platform.twitter.com/widgets.js"
+            charSet="utf-8"
           ></script>
         </Head>
         <body>
