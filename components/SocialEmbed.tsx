@@ -14,6 +14,11 @@ const EmbedSocial = ({ editor }: any) => {
   const [tweetUrl, setTweetUrl] = useState<string>("");
   const [fbCode, setFbCode] = useState<string>("");
 
+  const embedTweet = () => {
+    const tweetUrlRegex =
+      /https?:\/\/(?:www\.)?twitter\.com\/(?:#!\/)?(\w+)\/status\/(\d+)/;
+  };
+
   return (
     <Modal isOpen={isSocialModalOpen}>
       <div className="bg-white w-[550px] p-5">
