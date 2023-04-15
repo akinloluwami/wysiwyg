@@ -1,7 +1,4 @@
 import Editor from "@/components/Editor";
-import EmbedImage from "@/components/EmbedImage";
-import React, { useState } from "react";
-import { TwitterTweetEmbed } from "react-twitter-embed";
 
 const Index = () => {
   return (
