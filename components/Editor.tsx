@@ -11,6 +11,7 @@ import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
 import { useEffect } from "react";
 import iframe from "@/custom/iframe";
+import Blockquote from "@tiptap/extension-blockquote";
 
 const Editor = () => {
   const editor = useEditor({
@@ -25,9 +26,20 @@ const Editor = () => {
       Image,
       Youtube,
       iframe,
+      Blockquote,
     ],
     content: `
-    
+    <blockquote class="twitter-tweet">
+    <p lang="en" dir="ltr">
+      Hey{" "}
+      <a href="https://twitter.com/FarzaTV?ref_src=twsrc%5Etfw">@FarzaTV</a>{" "}
+      I gtfol last night. 🎉
+    </p>
+    &mdash; Akinkunmi ♦ N&amp;W s3 (@xing0x){" "}
+    <a href="https://twitter.com/xing0x/status/1646262950267695105?ref_src=twsrc%5Etfw">
+      April 12, 2023
+    </a>
+  </blockquote>
 
     `,
 
