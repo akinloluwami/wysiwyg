@@ -7,6 +7,7 @@ const Index = () => {
         type="text"
         placeholder="Post title"
         className="mt-10 w-full outline-none border-none text-4xl"
+        defaultValue={"Is this a cool title?"}
       />
       <Editor />
     </div>
