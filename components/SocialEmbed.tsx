@@ -10,6 +10,10 @@ const EmbedSocial = ({ editor }: any) => {
     closeSocialModal();
   };
 
+  const [platform, setPlatform] = useState<string>("Twitter");
+  const [tweetUrl, setTweetUrl] = useState<string>("");
+  const [fbCode, setFbCode] = useState<string>("");
+
   return (
     <Modal isOpen={isSocialModalOpen}>
       <div className="bg-white w-[550px] p-5">
