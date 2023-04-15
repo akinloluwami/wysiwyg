@@ -26,7 +26,7 @@ const Editor = () => {
       Youtube,
       iframe,
     ],
-    content: dummyContnent,
+    content: `<p>So it begins...</p>`,
 
     // onUpdate: ({ editor }) => {
     //   console.log(editor.getHTML());
