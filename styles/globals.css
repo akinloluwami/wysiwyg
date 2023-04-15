@@ -35,3 +35,9 @@ a {
   text-decoration: underline;
   color: royalblue;
 }
+
+iframe {
+  width: 500px;
+  height: 300px;
+  overflow-y: hidden;
+}
