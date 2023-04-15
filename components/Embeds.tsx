@@ -5,10 +5,12 @@ import { BsImage } from "react-icons/bs";
 import { RiBubbleChartFill } from "react-icons/ri";
 import useImageEmbedModal from "@/stores/useImageEmbedModal";
 import useVideoEmbedModal from "@/stores/useVideoEmbedModal";
+import useSocialEmbedModal from "@/stores/useSocialEmbedModal copy";
 
 const Embeds = () => {
   const { openImageModal } = useImageEmbedModal();
   const { openVideoModal } = useVideoEmbedModal();
+  const { openSocialModal } = useSocialEmbedModal();
   const embedOptions = [
     {
       name: "Picture",
@@ -26,6 +28,7 @@ const Embeds = () => {
       name: "Social",
       text: "Facebook, Twitter",
       icon: <RiBubbleChartFill />,
+      action: openSocialModal,
     },
   ];
   return (
