@@ -46,12 +46,16 @@ const EmbedImage = ({ editor }: any) => {
             className="hidden"
             onChange={(e: any) => setFile(e.target.files[0])}
           />
-          <button
-            className="border border-green-400 p-2 bg-gray-200"
-            onClick={handleImageSelect}
-          >
-            Upload from device
-          </button>
+          {!file ? (
+            <button
+              className="border border-green-400 p-2 bg-gray-200"
+              onClick={handleImageSelect}
+            >
+              Upload from device
+            </button>
+          ) : (
+            <h2>Image selected</h2>
+          )}
         </div>
         <div className="flex gap-3 mt-5">
           <button
