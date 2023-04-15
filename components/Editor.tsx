@@ -10,7 +10,6 @@ import EmbedVideo from "./VideoEmbed";
 import Youtube from "@tiptap/extension-youtube";
 import iframe from "@/custom/iframe";
 import EmbedSocial from "./SocialEmbed";
-import dummyContnent from "@/dummyContent";
 
 const Editor = () => {
   const editor = useEditor({
