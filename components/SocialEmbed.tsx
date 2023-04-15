@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import useImageEmbedModal from "@/stores/useImageEmbedModal";
 import { MdClose } from "react-icons/md";
 
-const SocialEmbed = ({ editor }: any) => {
+const EmbedSocial = ({ editor }: any) => {
   const { isImageModalOpen, closeImageModal } = useImageEmbedModal();
 
   const handleCloseModal = () => {
@@ -76,4 +76,4 @@ const SocialEmbed = ({ editor }: any) => {
   );
 };
 
-export default SocialEmbed;
+export default EmbedSocial;
