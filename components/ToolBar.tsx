@@ -140,7 +140,7 @@ const ToolBar = ({ editor }: any) => {
   };
 
   return (
-    <div className="mb-10 flex gap-3">
+    <div className="mb-10 flex gap-3 sticky top-0 bg-white py-3 z-10">
       <select onChange={handleFormatSelect}>
         <option value="paragraph">Paragraph</option>
         <option value="heading1">Heading 1</option>
